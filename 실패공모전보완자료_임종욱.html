@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>삼가 고인의 명복을 빕니다 — 완벽한 추모글이 30개였는데</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:#f7f4ee; --paper2:#efeae0;
+    --ink:#221f1a; --ink2:#55503f;
+    --gray:#8f8878; --line:#ddd6c6;
+    --accent:#8b1e1e;
+    --serif:"Noto Serif KR","바탕",Batang,serif;
+    --sans:"Noto Sans KR","맑은 고딕","Malgun Gothic",sans-serif;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--paper); color:var(--ink); font-family:var(--serif); line-height:1.8; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 24px; }
+  section { padding:90px 0; }
+  .kicker {
+    font-family:var(--sans); font-size:12px; font-weight:500;
+    letter-spacing:4px; color:var(--accent); margin-bottom:18px;
+  }
+  h2 { font-size:clamp(24px,4.5vw,34px); font-weight:700; line-height:1.45; margin-bottom:28px; }
+  p.lead { font-size:clamp(15px,2.4vw,17.5px); color:var(--ink2); }
+  .fade { opacity:0; transform:translateY(24px); transition:opacity .8s ease, transform .8s ease; }
+  .fade.on { opacity:1; transform:none; }
+
+  /* ── HERO ─────────────────────── */
+  .hero {
+    min-height:100svh; display:flex; align-items:center;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 110%, #d9d2c2 0%, transparent 60%),
+      var(--paper);
+    text-align:center; padding:60px 0;
+  }
+  .hero .wrap { width:100%; }
+  .hero .contest {
+    font-family:var(--sans); font-size:12px; letter-spacing:3px;
+    color:var(--gray); margin-bottom:44px;
+  }
+  .hero .date {
+    font-family:var(--sans); font-size:13.5px; letter-spacing:5px;
+    color:var(--accent); margin-bottom:22px;
+  }
+  .hero h1 {
+    font-size:clamp(32px,7vw,56px); font-weight:700;
+    line-height:1.4; letter-spacing:1px;
+  }
+  .hero .sub {
+    margin-top:24px; font-size:clamp(15px,2.6vw,19px); color:var(--ink2);
+  }
+  .hero .sub em { font-style:normal; color:var(--accent); }
+  .hero .scroll {
+    margin-top:70px; font-family:var(--sans); font-size:11px;
+    letter-spacing:3px; color:var(--gray); animation:bob 2.2s infinite;
+  }
+  @keyframes bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(7px)} }
+
+  /* ── 장면 서술 ─────────────────── */
+  .scene { background:var(--paper); }
+  .scene blockquote {
+    margin:36px 0; padding:6px 0 6px 26px;
+    border-left:3px solid var(--accent);
+    font-size:clamp(16px,2.8vw,20px); line-height:2; color:var(--ink);
+  }
+  .scene .small { font-family:var(--sans); font-size:13.5px; color:var(--gray); font-weight:300; }
+
+  /* ── 폰 데모 ──────────────────── */
+  .demo { background:#23211e; color:#f5f2ec; }
+  .demo .kicker { color:#d7a94b; }
+  .demo h2 { color:#f5f2ec; }
+  .demo p.lead { color:#b8b2a6; }
+  .demo-flex { display:flex; gap:48px; align-items:flex-start; flex-wrap:wrap; justify-content:center; margin-top:44px; }
+  .demo-side { flex:1 1 260px; max-width:330px; font-family:var(--sans); font-weight:300; font-size:14.5px; color:#cdc7ba; }
+  .demo-side b { color:#f5f2ec; font-weight:500; }
+  .demo-side .hint {
+    margin-top:20px; padding:14px 16px; border:1px dashed #57523f;
+    border-radius:8px; font-size:13px; color:#d7a94b;
+  }
+  .phone {
+    flex:0 0 auto; width:min(390px,92vw);
+    background:#fdfcfa; color:var(--ink);
+    border-radius:32px; padding:12px;
+    box-shadow:0 30px 80px rgba(0,0,0,.5);
+  }
+  .screen { border-radius:22px; overflow:hidden; height:640px; overflow-y:auto; background:#fdfcfa; }
+  .screen::-webkit-scrollbar { width:4px; } .screen::-webkit-scrollbar-thumb { background:#d5cfc0; border-radius:2px; }
+  .obit { background:#2b2823; color:#f5f2ec; text-align:center; padding:36px 20px 28px; }
+  .obit .flower { font-size:26px; }
+  .obit .label { font-size:11px; letter-spacing:7px; color:#b8b2a6; margin-top:10px; }
+  .obit h3 { font-size:22px; font-weight:600; margin-top:8px; letter-spacing:2px; }
+  .obit .dates { font-family:var(--sans); font-size:12px; color:#b8b2a6; margin-top:6px; }
+  .obit .info { margin-top:16px; padding-top:14px; border-top:1px solid #4a463f; font-size:12px; line-height:2; color:#d8d3c8; }
+  .hall { padding:20px 16px 40px; }
+  .hall-head { text-align:center; margin-bottom:4px; }
+  .hall-head h4 { font-size:14px; letter-spacing:4px; color:#3a372f; }
+  .hall-head p { font-family:var(--sans); font-size:11px; color:var(--gray); margin-top:4px; }
+  .reveal-bar { position:sticky; top:0; z-index:5; background:#fdfcfa; padding:10px 0 8px; border-bottom:1px solid #e5e0d5; margin-bottom:10px; }
+  .reveal-btn {
+    display:block; width:100%; padding:10px; font-size:12.5px; font-family:var(--sans);
+    letter-spacing:.5px; background:#fff; color:#5c564a;
+    border:1px solid #c9c2b2; border-radius:6px; cursor:pointer; transition:.25s;
+  }
+  .phone.revealed .reveal-btn { background:#8b1e1e; color:#fff; border-color:#8b1e1e; }
+  .legend { display:none; gap:5px; flex-wrap:wrap; margin-top:8px; font-size:10.5px; color:#5c564a; font-family:var(--sans); }
+  .phone.revealed .legend { display:flex; }
+  .legend span { padding:2px 7px; border-radius:4px; }
+  .lg1{background:#f6e3e3;} .lg2{background:#e3ecf6;} .lg3{background:#e6f0e3;} .lg4{background:#f3ecda;}
+  .stat { display:none; margin-top:8px; font-size:11.5px; color:var(--accent); text-align:center; font-family:var(--sans); }
+  .phone.revealed .stat { display:block; }
+  .msg { border-bottom:1px solid #eee9dd; padding:13px 2px; }
+  .msg .who { font-family:var(--sans); font-size:11px; color:#9a927f; margin-bottom:5px; }
+  .msg .txt { font-size:13px; line-height:1.75; color:#33302a; }
+  .phone.revealed .s1{background:#f6e3e3;border-radius:3px;}
+  .phone.revealed .s2{background:#e3ecf6;border-radius:3px;}
+  .phone.revealed .s3{background:#e6f0e3;border-radius:3px;}
+  .phone.revealed .s4{background:#f3ecda;border-radius:3px;}
+  .last { margin-top:36px; padding:22px 14px 28px; background:#f4f1ea; border-radius:10px; text-align:center; }
+  .last .cap { font-size:11.5px; color:var(--gray); line-height:1.9; font-family:var(--sans); }
+  .bubble {
+    display:inline-block; margin-top:12px; background:#fee500; color:#1a1a1a;
+    padding:10px 14px; border-radius:14px 14px 14px 4px;
+    font-size:13px; line-height:1.65; text-align:left; max-width:250px;
+    font-family:var(--sans); box-shadow:0 1px 3px rgba(0,0,0,.08);
+  }
+  .bubble-meta { font-family:var(--sans); font-size:10px; color:#9a927f; margin-top:6px; }
+  .last .closing { margin-top:18px; font-size:12.5px; color:#5c564a; line-height:1.9; }
+  .last .closing b { color:var(--accent); }
+
+  /* ── 요약표 ──────────────────── */
+  .summary { background:var(--paper2); }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:16px; margin-top:40px; }
+  .card {
+    background:#fff; border:1px solid var(--line); border-radius:12px;
+    padding:26px 22px; font-family:var(--sans);
+  }
+  .card .tag {
+    display:inline-block; font-size:11px; font-weight:700; letter-spacing:2px;
+    color:#fff; background:var(--ink); padding:4px 10px; border-radius:4px; margin-bottom:14px;
+  }
+  .card:nth-child(2) .tag { background:var(--accent); }
+  .card:nth-child(3) .tag { background:#3d5a45; }
+  .card h3 { font-family:var(--serif); font-size:17px; margin-bottom:10px; line-height:1.5; }
+  .card p { font-size:13.5px; font-weight:300; color:var(--ink2); line-height:1.85; }
+
+  /* ── 원인 진단 ────────────────── */
+  .cause .seed { margin-top:36px; display:flex; gap:20px; align-items:flex-start; }
+  .cause .num {
+    flex:0 0 auto; width:44px; height:44px; border-radius:50%;
+    border:1.5px solid var(--ink); display:flex; align-items:center; justify-content:center;
+    font-family:var(--sans); font-size:15px; font-weight:700;
+  }
+  .cause .seed h3 { font-size:18px; margin-bottom:8px; }
+  .cause .seed p { font-family:var(--sans); font-weight:300; font-size:14.5px; color:var(--ink2); }
+  .cause .core {
+    margin-top:48px; padding:32px 30px; background:var(--ink); color:#f0ece2;
+    border-radius:12px; font-size:clamp(15px,2.6vw,18px); line-height:2;
+  }
+  .cause .core em { font-style:normal; color:#d7a94b; }
+
+  /* ── 대응 방안 ────────────────── */
+  .plan { background:var(--paper2); }
+  .plan .steps { margin-top:40px; display:grid; gap:16px; }
+  .step {
+    background:#fff; border:1px solid var(--line); border-radius:12px;
+    padding:26px 24px; display:flex; gap:20px; align-items:flex-start; flex-wrap:wrap;
+  }
+  .step .badge {
+    font-family:var(--sans); font-size:11px; font-weight:700; letter-spacing:1px;
+    color:var(--accent); border:1px solid var(--accent); border-radius:20px;
+    padding:5px 13px; white-space:nowrap;
+  }
+  .step .body { flex:1 1 300px; }
+  .step h3 { font-size:17.5px; margin-bottom:6px; }
+  .step p { font-family:var(--sans); font-weight:300; font-size:14px; color:var(--ink2); }
+  .step .who { font-family:var(--sans); font-size:12px; color:var(--gray); margin-top:8px; }
+
+  /* ── 엔딩 ─────────────────────── */
+  .ending { text-align:center; padding:120px 0; }
+  .ending .line {
+    font-size:clamp(19px,3.6vw,27px); font-weight:600; line-height:2;
+  }
+  .ending .line b { color:var(--accent); }
+  .ending .sub { margin-top:26px; font-family:var(--sans); font-weight:300; font-size:14.5px; color:var(--gray); }
+
+  footer {
+    border-top:1px solid var(--line); padding:36px 0 48px; text-align:center;
+    font-family:var(--sans); font-size:12px; color:var(--gray); font-weight:300; line-height:2;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="contest">2026 KAIST AI × 실패 아이디어 공모전 · 미래에서 온 오답노트</div>
+    <div class="date">2036년 12월, 경기도 수원시</div>
+    <h1>삼가 고인의<br>명복을 빕니다</h1>
+    <div class="sub">완벽한 추모글이 30개였는데 —<br>그 안에 <em>아버지는 없었다</em></div>
+    <div class="scroll">△▽ SCROLL</div>
+  </div>
+</header>
+
+<!-- 장면 -->
+<section class="scene">
+  <div class="wrap fade">
+    <div class="kicker">1단계 — 예견된 실패</div>
+    <h2>딸은 밤새<br>추모글 30개를 읽었다</h2>
+    <p class="lead">
+      문장은 아름다웠고, 위로는 완벽했다. 그런데 읽을수록 이상했다.
+      어디에도 아버지가 없었다. 아버지 특유의 말버릇도, 함께했던 구체적인 기억도,
+      심지어 서툰 맞춤법 하나도 없었다. 조문객 30명은 각자 AI에게 추모글을 맡겼고,
+      AI는 각자에게 '완벽한 위로'를 돌려줬다.
+    </p>
+    <blockquote>
+      문장은 달랐지만 구조는 같았다.<br>
+      감정은 전달됐지만, 사람은 사라졌다.
+    </blockquote>
+    <p class="small">
+      이건 장례식만의 이야기가 아니었다. 2036년, 이별 통보도 완벽했고 사과 메시지도 배려 깊었고
+      생일 축하도 따뜻했다. 그런데 받는 사람들은 하나같이 말했다 — "읽고 나서 아무것도 남지 않았어."
+    </p>
+  </div>
+</section>
+
+<!-- 폰 데모 -->
+<section class="demo">
+  <div class="wrap fade">
+    <div class="kicker">그날의 부고장</div>
+    <h2>직접 읽어보세요</h2>
+    <p class="lead">그날 밤 딸이 스크롤하던 화면을 그대로 재현했습니다.</p>
+    <div class="demo-flex">
+      <div class="phone" id="phone">
+        <div class="screen">
+          <div class="obit">
+            <div class="flower">🏵</div>
+            <div class="label">부 고</div>
+            <h3>故 김 영 준</h3>
+            <div class="dates">1968. 3. 14 ~ 2036. 12. 9</div>
+            <div class="info">
+              빈소 수원 ○○병원 장례식장 3호실<br>
+              발인 2036년 12월 11일 (금) 오전 7시<br>
+              상주 딸 김지현
+            </div>
+          </div>
+          <div class="hall">
+            <div class="hall-head">
+              <h4>온라인 추모관</h4>
+              <p>조문객 여러분이 남겨주신 추모의 글 30개</p>
+            </div>
+            <div class="reveal-bar">
+              <button class="reveal-btn" onclick="document.getElementById('phone').classList.toggle('revealed')">
+                문장을 겹쳐 보기 — 딸이 느낀 이상함의 정체
+              </button>
+              <div class="legend">
+                <span class="lg1">① 애도 인사</span><span class="lg2">② 고인 회상</span>
+                <span class="lg3">③ 유가족 위로</span><span class="lg4">④ 마무리 기원</span>
+              </div>
+              <div class="stat">30개의 추모글 중 30개가 같은 구조입니다. ①→②→③→④</div>
+            </div>
+            <div id="list"></div>
+            <div class="last">
+              <div class="cap">
+                그날 밤, 딸은 아버지의 오래된 휴대폰을 꺼냈다.<br>
+                30개의 완벽한 추모글 사이에서 —<br>
+                유일하게 눈물이 난 문장은 이것이었다.
+              </div>
+              <div class="bubble">딸래미 오늘 마니 춥다던데 옷 뜨뜻하게 입고 댕겨라. 아빠가 항상 고맙따 미안하고</div>
+              <div class="bubble-meta">2031. 11. 21 오후 10:42 · 아빠</div>
+              <div class="closing">문장은 서툴렀고, 맞춤법은 틀렸다.<br>그런데 그 안에만 — <b>사람이 있었다.</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="demo-side">
+        <p><b>이 데모의 비밀.</b> 화면 속 추모글 30개는 사람이 쓴 게 아닙니다.
+        네 개의 문장 풀에서 하나씩 뽑아 조합하는 코드가 만들었습니다.
+        표현은 제각각이지만 구조는 단 하나 — ①애도 ②회상 ③위로 ④기원.</p>
+        <div class="hint">
+          "문장을 겹쳐 보기" 버튼을 누르면, 30개의 글이 전부 같은 뼈대라는 것이
+          색으로 드러납니다. 이 페이지의 코드 자체가 'AI 평균화'의 재현입니다.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 요약표 -->
+<section class="summary">
+  <div class="wrap fade">
+    <div class="kicker">한 장 요약</div>
+    <h2>BACKGROUND · IDEA · EFFECT</h2>
+    <div class="cards">
+      <div class="card">
+        <span class="tag">BACKGROUND</span>
+        <h3>감정 표현이<br>'귀찮은 일'이 된 시대</h3>
+        <p>2026년, 사람들은 위로·감사·사과의 말이 어려울 때마다 AI에게 맡기기 시작했다.
+        자발적으로, 아무 피해도 느끼지 못한 채. 언어는 완벽해졌지만 그 안의 사람이 옅어지고 있었다.</p>
+      </div>
+      <div class="card">
+        <span class="tag">IDEA</span>
+        <h3>인간의 '날 것'을<br>보존하는 시스템</h3>
+        <p>AI 금지가 아니다. 날 것의 기록 아카이브(개인), AI 프리존 표현 시간(교육),
+        감정 출처 표기 + Analog Zone 캠페인(사회) — 불완전한 내 언어를 지키는 세 겹의 장치.</p>
+      </div>
+      <div class="card">
+        <span class="tag">EFFECT</span>
+        <h3>불완전하지만<br>진짜인 말이 남는다</h3>
+        <p>결정적 감정의 순간마다 내 목소리로 말하는 훈련이 유지되고,
+        10년 뒤에도 '내가 쓴 문장의 역사'가 남는다. 관계는 완벽함이 아니라 진심으로 이어진다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 원인 진단 -->
+<section class="cause">
+  <div class="wrap fade">
+    <div class="kicker">2단계 — 원인 진단</div>
+    <h2>씨앗은 2026년에<br>이미 심어졌다</h2>
+    <div class="seed">
+      <div class="num">1</div>
+      <div>
+        <h3>감정 표현의 외주화</h3>
+        <p>웃어른께 드릴 감사 메시지, 친구에게 보낼 위로의 말, 공적인 사과문.
+        "어떻게 써야 할지 모르겠다"는 불편함을 느낄 때마다 AI에게 맡겼다.
+        한 번, 두 번, 열 번 — 어느 순간부터 내 말로 마음을 전하는 능력이 조금씩 퇴화했다.</p>
+      </div>
+    </div>
+    <div class="seed">
+      <div class="num">2</div>
+      <div>
+        <h3>사고의 외주화</h3>
+        <p>아이디어가 필요할 때, 창의적 판단이 필요할 때마다 AI에게 먼저 물었다.
+        독립적으로 고민했다고 믿었던 팀플 주제가 겹쳤고, 보고서 구조가 흡사했고, 디자인이 비슷했다.
+        개인의 생각이 AI라는 같은 필터를 통과하면서 점점 같은 모양이 됐다.</p>
+      </div>
+    </div>
+    <div class="core">
+      우리는 불편함을 회피하기 위해 AI에게 맡겼다.<br>
+      그런데 그 불편함이 사실은 — <em>인간이 성장하고,<br>
+      서로에게 닿는 유일한 방법이었다.</em>
+    </div>
+  </div>
+</section>
+
+<!-- 대응 방안 -->
+<section class="plan">
+  <div class="wrap fade">
+    <div class="kicker">3단계 — 대응 방안</div>
+    <h2>AI를 금지하는 것이<br>답이 아니다</h2>
+    <p class="lead">인간의 '날 것'을 보존하고 훈련하는 세 겹의 장치를 제안한다.</p>
+    <div class="steps">
+      <div class="step">
+        <span class="badge">① 개인 · 지금 당장</span>
+        <div class="body">
+          <h3>날 것의 기록 아카이브</h3>
+          <p>AI 보조 없이 직접 쓴 메시지·편지·일기만 저장되는 개인 아카이브를 습관화한다.
+          서툴고 불완전해도 괜찮다. 10년 후 꺼내 보면 그게 진짜 내 목소리의 역사가 된다.</p>
+          <div class="who">주체: 개인 · 방식: 날 것의 기록에 스스로 가치 부여하기</div>
+        </div>
+      </div>
+      <div class="step">
+        <span class="badge">② 교육 · 5년 내</span>
+        <div class="body">
+          <h3>AI 프리존 시간 의무화</h3>
+          <p>전국 초·중·고에서 주 1회 'AI 없는 표현 시간'을 운영한다.
+          손편지 쓰기, 즉흥 발표, 날 것의 글쓰기만 허용하고 성적에는 반영하지 않는다.
+          불편함을 견디고 내 언어로 표현하는 연습 자체가 목적이다.</p>
+          <div class="who">주체: 교육부 · 방식: 커리큘럼 반영</div>
+        </div>
+      </div>
+      <div class="step">
+        <span class="badge">③ 사회 · 사회적 합의</span>
+        <div class="body">
+          <h3>감정 출처 표기 + Analog Zone 캠페인</h3>
+          <p>추모글·사과문·유언장 등에 'AI 보조 작성 여부'를 자율 표기하는 문화를 만든다.
+          법적 강제가 아닌 윤리적 표준으로. 장례식·병문안·이별·청혼·사과 —
+          인생의 결정적 감정 순간만큼은 본인의 언어로 표현하자는 캠페인을 시작한다.</p>
+          <div class="who">주체: 시민사회·기업·학교 · 방식: 윤리적 표준과 캠페인</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 엔딩 -->
+<section class="ending">
+  <div class="wrap fade">
+    <div class="line">
+      불완전한 언어가<br>완벽한 위로보다 깊이 닿는다.<br>
+      우리는 지금, <b>그 불완전함을 지킬 선택</b>을 해야 한다.
+    </div>
+    <div class="sub">— 2036년에서 보낸 오답노트, 끝.</div>
+  </div>
+</section>
+
+<footer>
+  2026 KAIST AI × 실패 아이디어 공모전 「미래에서 온 오답노트」 보완 자료<br>
+  제안서: 「삼가 고인의 명복을 빕니다 — 완벽한 추모글이 30개였는데」
+</footer>
+
+<script>
+// ── 추모글 30개: 네 개의 문장 풀 조합. 이 코드 자체가 'AI 평균화'의 재현 ──
+const P1 = [
+  "삼가 고인의 명복을 빕니다.",
+  "갑작스러운 비보에 마음이 무겁습니다.",
+  "고인의 별세 소식에 깊은 슬픔을 전합니다.",
+  "뜻밖의 소식에 한동안 말을 잇지 못했습니다.",
+  "고인의 영면 소식에 애통한 마음을 전합니다.",
+  "황망한 소식에 가슴이 먹먹해집니다."
+];
+const P2 = [
+  "언제나 따뜻한 미소로 주변을 밝히시던 모습이 눈에 선합니다.",
+  "늘 성실하고 진심 어린 모습으로 많은 가르침을 주셨던 분이었습니다.",
+  "주변 사람들을 먼저 챙기시던 그 따뜻한 마음을 오래 기억하겠습니다.",
+  "함께한 시간 동안 보여주신 넉넉한 인품을 잊지 못할 것입니다.",
+  "언제나 묵묵히 자리를 지키며 귀감이 되어주신 분이었습니다.",
+  "만날 때마다 느껴지던 그 다정함이 아직도 생생합니다."
+];
+const P3 = [
+  "남겨진 가족분들께 깊은 위로의 말씀을 드립니다.",
+  "유가족분들이 부디 힘내시기를 진심으로 기원합니다.",
+  "슬픔 속에 계실 가족분들께 심심한 위로를 전합니다.",
+  "가족분들의 상심이 얼마나 크실지 감히 헤아리기 어렵습니다.",
+  "지현 님과 가족분들께 마음 깊은 곳에서 위로를 보냅니다.",
+  "힘든 시간을 보내고 계실 유가족분들을 생각하면 마음이 아픕니다."
+];
+const P4 = [
+  "고인께서 평안히 영면하시기를 기도합니다.",
+  "하늘에서 편히 쉬시기를 빕니다.",
+  "좋은 곳에서 안식하시기를 간절히 기원합니다.",
+  "고인의 명복을 다시 한번 빌며, 평안한 안식을 기원합니다.",
+  "부디 아픔 없는 곳에서 평온하시기를 바랍니다.",
+  "영원한 안식 속에서 평안하시길 기원합니다."
+];
+const NAMES = ["김민수","이서연","박지훈","최은영","정우진","한소희","오세훈","윤미래",
+  "임도현","강수정","조현우","신예은","권태양","황보라","서준호","문가영",
+  "배성민","노지원","유재훈","김하늘","이동욱","박소담","최강호","전미도",
+  "홍석민","안유진","송민재","장원희","백현우","고아라"];
+const list = document.getElementById("list");
+NAMES.forEach((name, i) => {
+  const s1 = P1[i % 6], s2 = P2[(i * 5 + 2) % 6], s3 = P3[(i * 7 + 4) % 6], s4 = P4[(i * 11 + 1) % 6];
+  const div = document.createElement("div");
+  div.className = "msg";
+  div.innerHTML =
+    `<div class="who">${name} · 조문객</div>` +
+    `<div class="txt"><span class="s1">${s1}</span> <span class="s2">${s2}</span> <span class="s3">${s3}</span> <span class="s4">${s4}</span></div>`;
+  list.appendChild(div);
+});
+
+// ── 스크롤 페이드인 ──
+const io = new IntersectionObserver((es) => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); } });
+}, { threshold: 0.15 });
+document.querySelectorAll(".fade").forEach(el => io.observe(el));
+</script>
+</body>
+</html>
